@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Project Title Here</title>
+  <title>AI-Generated Emails Detection</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +16,29 @@
 </head>
 
 <body>
+  <style>
+    .image-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px; /* Adjust as needed */
+    }
 
+    .img-container {
+        text-align: center;
+    }
+
+    .img-container img {
+        width: 500px; /* Adjust image width as needed */
+        height: 250px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .label {
+        margin-top: 10px;
+    }
+</style>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
@@ -46,10 +68,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">Project Title Here</h1>
+        <h1 class="mt-5">AI-Generated Emails Detection</h1>
         <ul class="list-unstyled">
-          <li>Team Member #1</li>
-          <li>Team Member #2</li>
+          <li>Mariam Ussama Abdelaziz</li>
+          <li>Salma Emad Abdelhalim</li>
         </ul>
       </div>
     </div>
@@ -59,7 +81,7 @@
       <div class="col-lg-12 text-left">
         <h2 class="mt-5">Problem Statement</h2>
 		<p>
-			Problem statement Detailes here
+			Artificial intelligence (AI)-generated emails, which are messages created by machines to mimic human communication, are increasingly common as a result of AI's quick development. These emails often aim to deceive recipients, posing serious threats such as phishing attacks, spam distribution, and dissemination of malicious content. The challenge lies in distinguishing AI-generated emails from genuine human-generated ones, as the former are becoming increasingly sophisticated and difficult to detect using traditional methods.
 		</p>
       </div>
     </div>
@@ -69,30 +91,46 @@
         <h2 class="mt-5">Dataset</h2>
 
         <p>
-			Details about the dataset here, add your dataset images below
+          The dataset should consist of human-written emails in addition to AI-generated emails. 
+          Regarding the AI-generated emails, we manually generated the dataset using available AI-tools as a result of a noticeable gap in available resources. 
+          Consequently, we have opted to leverage advanced AI tools such as ChatGPT and GPT-4 to generate AI-generated emails 
+          Regarding the human-written emails, our selection is the aeslc Email dataset as it contains a higher proportion of standard emails 
+          compared to the other datasets we considered. Additionally, the content length closely matches that of the AI-generated emails we're working with. 
+          Furthermore, this dataset offers an abundant volume of data suitable for training various models.
 		</p>
 
-		<br/> <!-- Empty Line before the image -->
-	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/imagenet.jpeg" class="img-fluid text-center">
-    	</div>
-    	<br/> <!-- Empty Line after the image -->
-      </div>
+  <div class="image-row">
+    <div class="img-container">
+        <img src="resources/images/Human.png" class="img-fluid">
+        <p class="label">Human-written email</p>
     </div>
+    <div class="img-container">
+        <img src="resources/images/AI.png" class="img-fluid">
+        <p class="label">AI-generated email</p>
+    </div>
+  </div>
+  
 
     <div class="row">
       <div class="col-lg-12 text-left">
         <h2 class="mt-5">Input/Output Examples</h2>
 
         <p>
-			Place few examples here to illustrate the dataset and your problem statement, add your model images below
-		</p>
+          Here are some examples of the input and output of the model.
+        </p>
 
-		<br/> <!-- Empty Line before the image -->
-	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/examples.jpg" class="img-fluid text-center">
-    	</div>
-    	<br/> <!-- Empty Line after the image -->
+    <div class="image-row">
+      <div class="img-container">
+          <p class="label">Input Text:</p>
+          <img src="resources/images/ex_Human.png" class="img-fluid">
+          <p class="label">Output: Human-written</p>
+      </div>
+      <div class="img-container">
+        <p class="label">Input Text:</p>
+          <img src="resources/images/ex_AI.png" class="img-fluid">
+          <p class="label">Output: AI-generated</p>
+      </div>
+    </div>
       </div>
     </div>
 
@@ -102,12 +140,17 @@
         <h2 class="mt-5">State of the art</h2>
 
         <p>
-			State here state of the art models and their accuracies, you might need to do this by including images of tables
-		</p>
+
+          We explored various NLP models but ultimately chose the RoBerta model because of its impressive performance and widespread applications. 
+          Additionally, we employed the Bert model, which serves as the foundational model for RoBerta, to compare the outcomes of both models.
+        </p>
+        <p>
+          Here is the state of the art of these models:
+        </p>
 
 		<br/> <!-- Empty Line before the image -->
 	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/state-of-the-art-results.png" class="img-fluid text-center">
+      		<img src="resources/images/comp_models.png" class="img-fluid text-center">
     	</div>
     	<br/> <!-- Empty Line after the image -->
       </div>
@@ -118,12 +161,12 @@
         <h2 class="mt-5">Orignial Model from Literature</h2>
 
         <p>
-			Details about the model here, add your model images below
-		</p>
+        RoBERTa (Robustly Optimized BERT approach) is a transformer-based language model that builds upon the architecture of BERT. It is trained on a larger corpus and for a longer duration, using a modified masked language modeling (MLM) objective and a sentence order prediction (SOP) objective. RoBERTa outperforms other existing models on various NLP tasks due to its training enhancements and larger-scale training data.
+        </p>
 
 		<br/> <!-- Empty Line before the image -->
 	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/model.png" class="img-fluid text-center">
+      		<img src="resources/images/arch.jpg" class="img-fluid text-center">
     	</div>
     	<br/> <!-- Empty Line after the image -->
       </div>
@@ -133,66 +176,82 @@
       <div class="col-lg-12 text-left">
         <h2 class="mt-5">Proposed Updates</h2>
 
-        <p>
-			Add all the model updates you made here, need as many images as you wish
-		</p>
-
-		<h5 class="mt-5">Update #1: Used new bla bla</h5>
+		<h5 class="mt-5">Update #1: Dataset generation </h5>
 		<p>
-			details here
+      We generated 1000 AI-generated Dataset to fine-tune the model to detect the AI-generated emails.
+      We used ChatGPT to generate the dataset.
+      We experiment with different the learning rates, batch sizes and max-sequence-length to get better results.
+    </p>
+
+		<h5 class="mt-5">Update #2: Enhancing Dataset</h5>
+		<p>
+			
+      We refined the human-written dataset by retaining emails that aligned with the length, style, 
+      and topics of the AI-generated dataset to improve our outcomes.
+      Also, 
+      we created additional AI-generated emails that were more generic, varying in lengths, topics, and writing styles.
 		</p>
+      </div>
+    </div>
+
+		<h5 class="mt-5">Update #3: Reduce the model</h5>
+		<p>
+			
+      Because RoBerta is a powerful model, 
+      we thought about using only Bert to see how it would affect the results. 
+      RoBerta is highly advanced, especially for our dataset.
+
+		</p>
+    <p>
+      Here is the architecture of the Bert Model:
+    </p>
 		<br/> <!-- Empty Line before the image -->
 	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/update1.jpeg" class="img-fluid text-center">
-    	</div>
-    	<br/> <!-- Empty Line after the image -->
-
-		<h5 class="mt-5">Update #2: Used new whatever</h5>
-		<p>
-			details here
-		</p>
-		<br/> <!-- Empty Line before the image -->
-	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/update2.png" class="img-fluid text-center">
+      		<img src="resources/images/Bert.png" class="img-fluid text-center">
+          <p class="label">BERT Model architecture</p>
     	</div>
     	<br/> <!-- Empty Line after the image -->
       </div>
     </div>
-
-
     <div class="row">
       <div class="col-lg-12 text-left">
         <h2 class="mt-5">Results</h2>
-
         <p>
-			Add your results here, add graphs and images to illustrate it.
-			Compare your results to the original model and state of the art
+          These results were achieved from training the BERT Model on 30 epochs, 
+          a learning rate of 2e-5, optimization using the Adam optimizer, 
+          and utilizing a batch size of 16.
 		</p>
-
-		<br/> <!-- Empty Line before the image -->
-	    <div class="img-container" align="center"> <!-- Block parent element -->
-      		<img src="resources/images/results.png" class="img-fluid text-center">
-    	</div>
-    	<br/> <!-- Empty Line after the image -->
+    <div class="image-row">
+      <div class="img-container">
+          <img src="resources/images/results.png" class="img-fluid">
+      </div>
+      <div class="img-container">
+          <img src="resources/images/results_2.png" class="img-fluid">
       </div>
     </div>
+      </div>
+    </div>
+
 
 
     <div class="row">
       <div class="col-lg-12 text-left">
         <h2 class="mt-5">Technical report</h2>
 
-        <p>
-			Here you will detail the details related to training, for example:
-		</p>
-
 	 	<ul>
-		  <li>Programming framework</li>
-		  <li>Training hardware i.e. colab or azure or anything else</li>
-		  <li>Training time</li>
-		  <li>Number of epochs</li>
-		  <li>Time per epoch</li>
-		  <li>Any other important detail or difficulties</li>
+		  <li>Programming framework: Pytorch</li>
+		  <li>Training hardware: Google Colab</li>
+		  <li>Training time: 2:30 hrs</li>
+		  <li>Number of epochs: 30 epochs</li>
+		  <li>Time per epoch: 5 mins</li>
+		  <li>Difficulties:
+        <ul>
+          <li>No AI-generated emails Dataset found.</li>
+          <li>Limited Data for both Classes: the AI-Generated and the Human-written.</li>
+          <li>The dataset had limited diversity. </li>
+        </ul>
+        
+      </li>
 		</ul> 
       </div>
     </div>
@@ -202,7 +261,14 @@
 	    <h2 class="mt-5">Conclusion</h2>
 
 	    <p>
-			Conclusion and future work (including lessons learned and interesting findings
+
+        In conclusion, our project aimed to create an AI-generated email dataset due to the absence of available resources. 
+        We encountered substantial challenges in aligning AI-generated and human-written emails concerning length, style, and topics. 
+        While our model faced difficulty differentiating based on content, it showed proficiency in recognizing writing style discrepancies. 
+        To mitigate these issues, we refined the alignment by filtering human-written emails and generating more generic AI emails.
+         Despite hurdles, both models exhibited promising outcomes. Notably, RoBerta consistently outperformed BERT, 
+         demonstrating near-perfect accuracy during training and testing phases following extensive filtration and generation efforts. 
+         These results underscore the potential for enhanced accuracy with a more comprehensive and diverse dataset.
 		</p>
 
 	  </div>
@@ -212,15 +278,18 @@
 	  <div class="col-lg-12 text-left">
 	    <h2 class="mt-5">References</h2>
 
-	    <p>
-	    	List all references here, the following are only examples
-	    </p>
-
-		<ol>
-		  <li><a href="http://www.google.com">Problem statement url</a></li>
-		  <li><a href="http://www.google.com">Dataset URL</a></li>
-		  <li><a href="http://www.google.com">Model Reference URL</a></li>
-		</ol> 
+      <ol>
+        <li><a href="https://arxiv.org/pdf/2305.15004.pdf">LLMDet: A large language models detection tool</a></li>
+        <li><a href="https://arxiv.org/abs/2301.13852">Mitrović, S., Andreoletti, D., & Ayoub, O. - Chatgpt or human? detect and explain</a></li>
+        <li><a href="https://papers.nips.cc/paper/2019/hash/3e9f0fc9b2f89e043bc6233994dfcf76-Abstract.html">Zellers, R., Holtzman, A., Rashkin, H., Bisk, Y., Farhadi, A., Roesner, F., & Choi, Y. - Defending Against Neural Fake News</a></li>
+        <li><a href="https://doi.org/10.18653/v1/2020.emnlp-">Dugan, L., Ippolito, D., Kirubarajan, A., & Callison-Burch, C. - RoFT: A Tool for Evaluating Human Detection of Machine-Generated Text</a></li>
+        <li><a href="https://doi.org/10.18653/v1/2022.acl-long.501">Dou, Y., Forbes, M., Koncel-Kedziorski, R., Smith, N. A., & Choi, Y. - Is GPT-3 Text Indistinguishable from Human Text? Scarecrow: A Framework for Scrutinizing Machine Text</a></li>
+        <li><a href="https://arxiv.org/abs/2309.03992v2">Bhattacharjee, A., Kumarage, T., Moraffah, R., & Liu, H. - Conda: Contrastive domain adaptation for AI-generated text detection</a></li>
+        <li><a href="https://arxiv.org/pdf/2301.13852.pdf">Hat H ? detect and explain. explaining ecisions of M ...</a></li>
+        <li><a href="http://aclweb.org/aclwiki">Radev, D. - CLAIR collection of fraud email</a></li>
+        <li><a href="https://peerj.com/articles/cs-443/">Fröhling, L., & Zubiaga, A. - Feature-based detection of automated language models: tackling GPT-2, GPT-3 and Grover</a></li>
+      </ol>
+      
 	  </div>
 	</div>
 
